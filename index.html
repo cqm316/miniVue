@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="cvue.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+        <p>{{message}}</p>
+        <input type="text" c-model="name" /> {{name}}
+    </div>
+</body>
+<script>
+let vm = new Kvue({
+    el:"#app",
+    data:{
+        message:"测试数据",
+        name:"张三",
+    }
+})
+vm._data.message = "测试数据";
+vm._data.name = "李四";
+// vm.message
+// vm.options
+console.log(vm._data);
+
+</script>
+
+</html>
