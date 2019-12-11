@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="cvue.js" type="text/javascript"></script>
-    <title>Document</title>
+    <title>Title</title>
 </head>
-
 <body>
+
     <div id="app">
-        {{ message }}
-        <p>{{message}}</p>
-        <input type="text" c-model="name" /> {{name}}
+        <!-- 双向数据绑定 靠的是表单 -->
+        <input type="text" v-model="message">
+        <div>{{a.b}}</div>
+        <div>我很帅</div>
+        <ul>
+            <li>333</li>
+        </ul>
+        {{message}}
     </div>
+
 </body>
+<!--<script src="node_modules/vue/dist/vue.js"></script>-->
+<script src="watcher.js"></script>
+<script src="observer.js"></script>
+<script src="compile.js"></script>
+<script src="vue.js"></script>
 <script>
-let vm = new Kvue({
-    el:"#app",
-    data:{
-        message:"测试数据",
-        name:"张三",
-    }
-})
-vm._data.message = "测试数据";
-vm._data.name = "李四";
-// vm.message
-// vm.options
-console.log(vm._data);
-
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello',
+            a: {
+                b: 6666
+            }
+        }
+    })
 </script>
-
 </html>
